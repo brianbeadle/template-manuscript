@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% template for standard scientific article
+% author: Brian Beadle, bbeadle@northland.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% basic functions of the doc
+\documentclass[a4paper,12pt]{article}
+\usepackage[english]{babel}
+\usepackage[authoryear,comma,longnamesfirst,sectionbib]{natbib}
+\bibliographystyle{apalike}
+% LaTeX Settings (fold)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} %
+\usepackage{pslatex} %
+\usepackage[paper=a4paper, top=2cm, left=2.35cm, right=2.35cm, bottom=2cm, headheight=1.0cm, headsep=1cm, footnotesep=0.5cm]{geometry}%
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref} % for hyperlinks to references, sections, tables, etc.
+\usepackage{float} % allows more control over figure and table floats
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+\setlength\parindent{0pt} % set the indent
+\setlength{\parskip}{8pt} % set space between paragraphs
+\usepackage{setspace} % for spacing between lines
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% math declarations
+\usepackage{amsfonts, amsmath, amssymb, amsfonts}
+\newdimen\jot \jot=15pt
+%\input{ueur.fd}
+\DeclareMathVersion{euler} \DeclareMathVersion{eulerbold} \SetSymbolFont{letters}{euler}{U}{eur}{m}{n} \SetSymbolFont{letters}{eulerbold}{U}{eur}{b}{n} \SetSymbolFont{operators}{eulerbold}{OT1}{cmr}{bx}{n} \SetSymbolFont{symbols}{eulerbold}{OMS}{cmsy}{b}{n} \SetMathAlphabet\mathsf{eulerbold}{OT1}{cmss}{bx}{n} \SetMathAlphabet\mathit{eulerbold}{OT1}{cmr}{bx}{it}
+\newcommand{\eqexcl}{\ensuremath{\stackrel{\mathrm{!}}{=}}}
+
+\makeatletter
+\def\eulermath{\@nomath\eulermath
+              \mathversion{euler}}
+\def\uneulermath{\@nomath\uneulermath
+              \mathversion{normal}}
+\def\eulerbfmath{\@nomath\eulerbfmath
+              \mathversion{eulerbold}}
+\def\uneulerbfmath{\@nomath\uneulerbfmath
+              \mathversion{normal}}
+\newcommand{\bfmath}[1]{\mbox{\boldmath$#1$\unboldmath}}
+\newcommand{\eumath}[1]{\mbox{\eulermath$#1$\uneulermath}}
+\newcommand{\eubmath}[1]{\mbox{\eulerbfmath$#1$\uneulerbfmath}}
+\makeatother%
+
+\usepackage{mathptmx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% add-ons for tables, settings, etc.
+\usepackage{lscape} % for landscape on select pages
+\usepackage{eurosym} % for euro symbol
+\usepackage{longtable} 
+\usepackage{booktabs}
+\usepackage{multicol,multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, fit, backgrounds}
+\usepackage{caption}
+
+% Set the width of table captions
+\captionsetup[table]{width=0.8\textwidth}
+
+% Set the width of figure captions
+\captionsetup[figure]{width=0.8\textwidth}
+
+
+\title{A comparative analysis on the farm-level sustainability of conventional versus organic production in Germany \\ \vspace{1cm} \normalsize{\textit{Working draft}}}
+\author{Brian Beadle, Fumi Okura}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\doublespacing
+
+\textbf{Abstract:} 
+
+\textbf{Keywords:} 
+
+\newpage
+\input{1.introduction}
+\input{2.review}
+\input{3.methods}
+\input{4.results}
+\input{5.conclusion} \newpage
+\bibliography{biblio} \newpage
+\appendix \input{6.appendix}
+
+\end{document}
+
